@@ -6,21 +6,7 @@ public class PlacerManager : MonoBehaviour
 {
     public GameObject UnitToPlace;
 
-    //public GameObject UnitToPlacePlacer
-    //{
-    //    get
-    //    {
-    //        return UnitToPlacePlacer;
-    //    }
-    //    set
-    //    {
-    //        UnitToPlace = value;
-    //        currentPlacer = value;
-    //        Initialize();
-    //    }
-
-    //}
-
+    
     public void SetUnitToPlacePlacer(GameObject prefab)
     {
         UnitToPlacePlacer = prefab;
@@ -29,17 +15,12 @@ public class PlacerManager : MonoBehaviour
 
     public GameObject UnitToPlacePlacer;
 
-    private void Awake()
-    {
-        //Initialize();
-    }
-
     private GameObject currentPlacer;
 
     public void PlaceObject(Vector3 position)
     {
         GameObject unitInstance = Instantiate(UnitToPlace);
-        unitInstance.transform.position = position;
+        unitInstance.transform.position = new Vector3(position.x, 0.5f, position.z);
     }
 
     public void Initialize()

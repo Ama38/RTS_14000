@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    // Needs to changed using scriptable object, now itsjust variable
     
 
     private PlayerManager playerManager;
@@ -26,14 +26,16 @@ public class InputManager : MonoBehaviour
             switch (hit.collider.gameObject.layer)
             {
                 case 0:
-                    //print(placerManager);
                     placerManager.Sync(hit.point);
+                    if (Mouse.current.leftButton.wasPressedThisFrame && !EventSystem.current.IsPointerOverGameObject())
+                    {
+                        placerManager.PlaceObject(hit.point);
+                        print(hit.point);
+                    }
                     break;
+
             }
-            if (Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                print(hit.point);
-            }
+            
         }
     }
 
