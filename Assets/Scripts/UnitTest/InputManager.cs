@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Needs to changed using scriptable object, now itsjust variable
+    
+
+    private PlayerManager playerManager;
+    private PlacerManager placerManager;
+    
+
+    private void Awake()
     {
-        
+        playerManager = GetComponent<PlayerManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InputHandler()
     {
-        
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            switch (hit.collider.gameObject.layer) 
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                print(hit.point);
+            }
+        }
     }
+
+    
 }

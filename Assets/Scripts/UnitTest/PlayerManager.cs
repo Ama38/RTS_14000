@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private InputManager inputManager;
+    private PlacerManager placerManager;
+    public GameObject UnitToPlace;
+    public GameObject UnitToPlacePlacer;
+
+    private void Start()
     {
-        
+        inputManager = GetComponent<InputManager>();
+    }
+    
+    private void Update()
+    {
+        inputManager.InputHandler();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetPrefab(GameObject prefab, GameObject prefabPlacer)
     {
-        
+        UnitToPlace = prefab;
+        UnitToPlacePlacer = prefabPlacer;
+        placerManager.UnitToPlace = UnitToPlace;
+        placerManager.UnitToPlacePlacer = UnitToPlacePlacer;
     }
+    
+
 }
