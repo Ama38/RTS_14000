@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
 
     private PlayerManager playerManager;
     private PlacerManager placerManager;
-    
+    private bool isDragging;
 
     private void Awake()
     {
@@ -31,15 +31,14 @@ public class InputManager : MonoBehaviour
             {
                 case 0:
                     placerManager.Sync(hit.point);
+                    if (Mouse.current.leftButton.isPressed)
+                    {
+                        placerManager.PlaceObject(hit.point);
+                        print(hit.point);
+                    }
                     break;
 
             }
-            if (Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                placerManager.PlaceObject(hit.point);
-                print(hit.point);
-            }
-
         }
     }
 

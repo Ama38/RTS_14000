@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2208651732634223516}
   - component: {fileID: 7703894313945900658}
   - component: {fileID: 8349962884477668985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestUnitPlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
