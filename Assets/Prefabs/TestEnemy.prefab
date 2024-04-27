@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5737831603449652482}
   - component: {fileID: 6380929871430429939}
   - component: {fileID: 6442779692883521113}
+  - component: {fileID: -3368335389232457698}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -202,3 +203,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3368335389232457698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899813132711638980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a05014229135740a8db2c066b347a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placerPrefab: {fileID: 7899813132711638980, guid: 5fb5754ad24f36b49b80f6339bb12e2a, type: 3}

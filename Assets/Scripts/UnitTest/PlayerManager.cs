@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         inputManager = GetComponent<InputManager>();
+        placerManager = GetComponent<PlacerManager>();
     }
     
     private void Update()
@@ -19,12 +20,12 @@ public class PlayerManager : MonoBehaviour
         inputManager.InputHandler();
     }
 
-    public void SetPrefab(GameObject prefab, GameObject prefabPlacer)
+    public void SetPrefab(GameObject prefab)
     {
         UnitToPlace = prefab;
-        UnitToPlacePlacer = prefabPlacer;
+        UnitToPlacePlacer = prefab.GetComponent<Test>().placerPrefab;
         placerManager.UnitToPlace = UnitToPlace;
-        placerManager.UnitToPlacePlacer = UnitToPlacePlacer;
+        placerManager.SetUnitToPlacePlacer(UnitToPlacePlacer);
     }
     
 

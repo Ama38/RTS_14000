@@ -4,32 +4,34 @@ using UnityEngine;
 
 public class PlacerManager : MonoBehaviour
 {
-    public GameObject UnitToPlace
-    {
-        get
-        {
-            return UnitToPlace;
-        }
-        set
-        {
-            UnitToPlace = value;
-        }
+    public GameObject UnitToPlace;
 
+    //public GameObject UnitToPlacePlacer
+    //{
+    //    get
+    //    {
+    //        return UnitToPlacePlacer;
+    //    }
+    //    set
+    //    {
+    //        UnitToPlace = value;
+    //        currentPlacer = value;
+    //        Initialize();
+    //    }
+
+    //}
+
+    public void SetUnitToPlacePlacer(GameObject prefab)
+    {
+        UnitToPlacePlacer = prefab;
+        Initialize();
     }
 
-    public GameObject UnitToPlacePlacer
-    {
-        get
-        {
-            return UnitToPlace;
-        }
-        set
-        {
-            UnitToPlace = value;
-            currentPlacer = value;
-            Initialize();   
-        }
+    public GameObject UnitToPlacePlacer;
 
+    private void Awake()
+    {
+        //Initialize();
     }
 
     private GameObject currentPlacer;
