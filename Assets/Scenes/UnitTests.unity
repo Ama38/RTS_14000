@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213ea0942eb3c2408cf9403a8754a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   UnitToPlace: {fileID: 0}
   UnitToPlacePlacer: {fileID: 0}
 --- !u!114 &42059235
@@ -1663,12 +1664,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42059234}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: SetPrefab
-        m_Mode: 2
+        m_MethodName: SelectPrefab
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 7899813132711638980, guid: 67b4adfef482c9d42b6126346038452c, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1944,11 +1945,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42059234}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: SetPrefab
-        m_Mode: 2
+        m_MethodName: SelectPrefab
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 7182620595329228612, guid: 7928f2ca6a29a684ca7fd16d438854be, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

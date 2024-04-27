@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    [SerializeField] private PlayerBattleInventory inventory;                                       
     private InputManager inputManager;
     private PlacerManager placerManager;
     public GameObject UnitToPlace;
@@ -20,12 +21,19 @@ public class PlayerManager : MonoBehaviour
         inputManager.InputHandler();
     }
 
-    public void SetPrefab(GameObject prefab)
+    //public void SetPrefab(GameObject prefab)
+    //{
+    //    UnitToPlace = prefab;
+    //    UnitToPlacePlacer = prefab.GetComponent<Test>().placerPrefab;
+    //    placerManager.UnitToPlace = UnitToPlace;
+    //    placerManager.SetUnitToPlacePlacer(UnitToPlacePlacer);
+    //}
+
+
+    public void SelectPrefab(int index)
     {
-        UnitToPlace = prefab;
-        UnitToPlacePlacer = prefab.GetComponent<Test>().placerPrefab;
-        placerManager.UnitToPlace = UnitToPlace;
-        placerManager.SetUnitToPlacePlacer(UnitToPlacePlacer);
+        placerManager.UnitToPlace = inventory.slots[index];
+        placerManager.SetUnitToPlacePlacer(inventory.slots[index].GetComponent<Test>().placerPrefab);
     }
     
 
