@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213ea0942eb3c2408cf9403a8754a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: d97ee24b9733b6d4bb267e605d42aacc, type: 2}
   UnitToPlace: {fileID: 0}
   UnitToPlacePlacer: {fileID: 0}
 --- !u!114 &42059235

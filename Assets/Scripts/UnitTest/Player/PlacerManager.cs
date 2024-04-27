@@ -25,6 +25,7 @@ public class PlacerManager : MonoBehaviour
 
     public void Initialize()
     {
+        Destroy(currentPlacer);
         currentPlacer = Instantiate(UnitToPlacePlacer);
         currentPlacer.transform.position = new Vector3(0, -10, 0);
     }

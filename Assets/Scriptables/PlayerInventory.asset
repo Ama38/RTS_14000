@@ -9,20 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee8b3da704dd1174a88cffe7a9d3e3da, type: 3}
+  m_Script: {fileID: 11500000, guid: 86744bcefbff8024a9589d2fca26e638, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  Slot1: {fileID: 0}
-  Slot1Quantity: 0
-  Slot2: {fileID: 0}
-  Slot2Quantity: 0
-  Slot3: {fileID: 0}
-  Slot3Quantity: 0
-  Slot4: {fileID: 0}
-  Slot4Quantity: 0
-  Slot5: {fileID: 0}
-  Slot5Quantity: 0
-  Slot6: {fileID: 0}
-  Slot6Quantity: 0
-  Slot7: {fileID: 0}
-  Slot7Quantity: 0
+  slots:
+  - {fileID: 7182620595329228612, guid: 7928f2ca6a29a684ca7fd16d438854be, type: 3}
+  - {fileID: 7899813132711638980, guid: 67b4adfef482c9d42b6126346038452c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numberOfUnits: 00000000000000000000000000000000000000000000000000000000

@@ -23,19 +23,23 @@ public class InputManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             switch (hit.collider.gameObject.layer)
             {
                 case 0:
                     placerManager.Sync(hit.point);
-                    if (Mouse.current.leftButton.wasPressedThisFrame && !EventSystem.current.IsPointerOverGameObject())
-                    {
-                        placerManager.PlaceObject(hit.point);
-                        print(hit.point);
-                    }
                     break;
 
             }
-            
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                placerManager.PlaceObject(hit.point);
+                print(hit.point);
+            }
+
         }
     }
 
