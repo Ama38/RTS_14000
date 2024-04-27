@@ -23,6 +23,12 @@ public class PlacerManager : MonoBehaviour
         unitInstance.transform.position = new Vector3(position.x, 0.5f, position.z);
     }
 
+    //private bool Check()
+    //{
+    //    currentPlacer.GetComponent<BoxCollider>().enabled = true;
+    //    return currentPlacer.GetComponent<PlacerChecker>().IsFree;
+    //}
+
     public void Initialize()
     {
         Destroy(currentPlacer);

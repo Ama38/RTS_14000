@@ -10,7 +10,6 @@ public class InputManager : MonoBehaviour
 
     private PlayerManager playerManager;
     private PlacerManager placerManager;
-    private bool isDragging;
 
     private void Awake()
     {
