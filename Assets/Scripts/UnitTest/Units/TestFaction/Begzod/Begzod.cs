@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Begzod : MonoBehaviour
+public class Begzod : MonoBehaviour, IUnit
 {
-    // Start is called before the first frame update
+    public GameObject placerPrefab;
+    private IUnitAI AI;
+
+    public GameObject GetPlacerPrefab()
+    {
+        return placerPrefab;
+    }
+    private void Awake()
+    {
+        AI = GetComponent<IUnitAI>();
+    }
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        AI.Move();
     }
 }

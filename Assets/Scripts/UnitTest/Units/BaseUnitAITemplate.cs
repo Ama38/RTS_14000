@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUnit
+public interface IUnitAI
 {
     public void Attack() { }
+    public void SpecialAbility() { }
     public void Move() { }
+    
     public void Interact() { }
     public void FindTarget() { }
 }

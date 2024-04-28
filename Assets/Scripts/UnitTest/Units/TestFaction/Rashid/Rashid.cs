@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rashid : MonoBehaviour
+public class Rashid : MonoBehaviour, IUnit
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject placerPrefab;
+    private IUnitAI AI;
+
+    public GameObject GetPlacerPrefab()
     {
-        
+        return placerPrefab;
+    }
+    private void Awake()
+    {
+        AI = GetComponent<IUnitAI>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+
+    }
+
     void Update()
     {
-        
+        AI.Move();
     }
 }
