@@ -11,7 +11,4 @@ public interface IUnit
 }
 
 
-public abstract class Unit : MonoBehaviour
-{
-    public int team;
-}
+
