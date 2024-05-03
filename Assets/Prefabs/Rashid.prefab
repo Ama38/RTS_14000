@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 7403643742954050566}
   - component: {fileID: 5737831603449652482}
   - component: {fileID: 6380929871430429939}
+  - component: {fileID: -6718285331076851900}
+  - component: {fileID: 3863196730036255791}
   - component: {fileID: 6442779692883521113}
-  - component: {fileID: -3368335389232457698}
+  - component: {fileID: -7415048876883943608}
   m_Layer: 6
   m_Name: Rashid
   m_TagString: Untagged
@@ -107,6 +109,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6718285331076851900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899813132711638980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e428605862e34ea46b25d496eadd78b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitTeam: 1
+  IsAlive: 0
+  placerPrefab: {fileID: 7899813132711638980, guid: 5fb5754ad24f36b49b80f6339bb12e2a, type: 3}
+  AI: {fileID: 0}
+--- !u!114 &3863196730036255791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899813132711638980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf4f0beb4141094782b4199d628d743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allyUnits: []
+  enemyUnits: []
+  agent: {fileID: 0}
+  currentTarget: {fileID: 0}
 --- !u!82 &6442779692883521113
 AudioSource:
   m_ObjectHideFlags: 0
@@ -203,16 +237,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-3368335389232457698
-MonoBehaviour:
+--- !u!195 &-7415048876883943608
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7899813132711638980}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55a05014229135740a8db2c066b347a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placerPrefab: {fileID: 7899813132711638980, guid: 5fb5754ad24f36b49b80f6339bb12e2a, type: 3}
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

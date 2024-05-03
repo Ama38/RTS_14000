@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rashid : MonoBehaviour, IUnit
+public class Rashid : Unit
 {
-    public GameObject placerPrefab;
-    private IUnitAI AI;
+    //public new Team UnitTeam;
+    //public new bool IsAlive;
+    //private GameObject placerPrefab;
+    //private UnitAI AI;
 
-    public GameObject GetPlacerPrefab()
+    public override GameObject GetPlacerPrefab()
     {
         return placerPrefab;
     }
     private void Awake()
-    {
-        AI = GetComponent<IUnitAI>();
+    { 
+        AI = GetComponent<UnitAI>();
     }
 
     void Start()

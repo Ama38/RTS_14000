@@ -7,24 +7,16 @@ using UnityEngine.AI;
 
 public class BegzodAI : UnitAI
 {
-    private List<GameObject> allyUnits;
-    private List<GameObject> enemyUnits;
-    private NavMeshAgent agent;
-    private GameObject currentTarget;
+    //private List<GameObject> allyUnits;
+    //private List<GameObject> enemyUnits;
+    //private NavMeshAgent agent;
+    //private GameObject currentTarget;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        if (GetComponent<Unit>().UnitTeam == Unit.Team.Player)
-        {
-            allyUnits = GameObject.Find("PlayerUnitsCounter").GetComponent<UnitsCounter>().units;
-            enemyUnits = GameObject.Find("EnemyUnitsCounter").GetComponent<UnitsCounter>().units;
-        }
-        else
-        {
-            allyUnits = GameObject.Find("EnemyUnitsCounter").GetComponent<UnitsCounter>().units;
-            enemyUnits = GameObject.Find("PlayerUnitsCounter").GetComponent<UnitsCounter>().units;
-        }
+        AssignTeam();
+        AddToTeam();
     }
 
     public override void Attack()
@@ -34,26 +26,29 @@ public class BegzodAI : UnitAI
 
     public override void FindTarget()
     {
-        if (currentTarget == null)
+        if (enemyUnits.Count == 0)
         {
-            if (enemyUnits.Count == 0)
+            currentTarget = null;
+            return;
+        }
+        currentTarget = enemyUnits[0];
+        foreach (GameObject unit in enemyUnits)
+        {
+            if (Vector3.Distance(gameObject.transform.position, unit.transform.position) < Vector3.Distance(gameObject.transform.position, currentTarget.transform.position))
             {
-                return;
-            }
-            currentTarget = enemyUnits[0];
-            foreach (GameObject unit in enemyUnits)
-            {
-                if (Vector3.Distance(gameObject.transform.position, unit.transform.position) < Vector3.Distance(gameObject.transform.position, currentTarget.transform.position))
-                {
-                    currentTarget = unit;
-                }
+                currentTarget = unit;
             }
         }
     }
 
     public override void Move()
     {
-        if (currentTarget.GetComponent<Unit>().IsAlive)
+        if (currentTarget == null)
+        {
+            FindTarget();
+            return;
+        }
+        if (!currentTarget.IsDestroyed())
         {
             agent.SetDestination(currentTarget.transform.position);
         }
@@ -63,7 +58,7 @@ public class BegzodAI : UnitAI
         }
     }
 
-    public override void Interact ()
+    public override void Interact()
     {
 
     }

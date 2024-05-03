@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7235460486610903748}
   - component: {fileID: 7403643742954050566}
   - component: {fileID: 5737831603449652482}
-  - component: {fileID: -7303357359595447226}
   m_Layer: 6
   m_Name: RashidPlacer
   m_TagString: Untagged
@@ -32,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7403643742954050566
 MeshFilter:
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-7303357359595447226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7899813132711638980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe097990f3821254589b157afa3a4049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsFree: 1

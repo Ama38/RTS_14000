@@ -22,7 +22,6 @@ public class PlacerManager : MonoBehaviour
     {
         GameObject unitInstance = Instantiate(UnitToPlace);
         unitInstance.transform.position = new Vector3(position.x, 0.5f, position.z);
-        unitInstance.GetComponent<Unit>().
     }
 
     //private bool Check()

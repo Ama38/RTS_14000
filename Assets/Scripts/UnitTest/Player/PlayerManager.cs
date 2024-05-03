@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     public void SelectPrefab(int index)
     {
         placerManager.UnitToPlace = inventory.slots[index];
-        placerManager.SetUnitToPlacePlacer(inventory.slots[index].GetComponent<IUnit>().GetPlacerPrefab());
+        placerManager.SetUnitToPlacePlacer(inventory.slots[index].GetComponent<Unit>().GetPlacerPrefab());
     }
     
 

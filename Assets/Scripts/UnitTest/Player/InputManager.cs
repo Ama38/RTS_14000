@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    
-
+    [SerializeField] private float placingInterval;
     private PlayerManager playerManager;
-    private PlacerManager placerManager;
+    private PlacerManager placerManager; 
+    private float lastPlaced;
 
     private void Awake()
     {
@@ -32,11 +32,14 @@ public class InputManager : MonoBehaviour
                     placerManager.Sync(hit.point);
                     if (Mouse.current.leftButton.isPressed)
                     {
-                        placerManager.PlaceObject(hit.point);
-                        print(hit.point);
+                        if (Time.time - lastPlaced > placingInterval)
+                        {
+                            placerManager.PlaceObject(hit.point);
+                            print(hit.point);
+                            lastPlaced = Time.time;
+                        }
                     }
                     break;
-
             }
         }
     }
